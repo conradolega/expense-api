@@ -1,6 +1,7 @@
 require 'grape'
+require 'sequel'
 
-module Expense
+module ExpenseApp
   class API < Grape::API
     version 'v1'
     format :json

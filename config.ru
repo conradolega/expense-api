@@ -1,2 +1,4 @@
+require './expense'
 require './expense_api'
-run Expense::API
+
+run ExpenseApp::API
