@@ -15,17 +15,17 @@ module ExpenseApp
         {
           total: Expense.count,
           expenses: Expense.all.map do |i|
-                      {item: i.item, amount: i.amount}
+                      {description: i.description, amount: i.amount}
                     end
         }
       end
 
       params do
         requires :amount, type: Integer
-        requires :item, type: String
+        requires :description, type: String
       end
       post do
-        expense = Expense.insert(amount: params[:amount], item: params[:item])
+        expense = Expense.insert(amount: params[:amount], description: params[:description])
       end
     end
   end
