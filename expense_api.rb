@@ -25,7 +25,7 @@ module ExpenseApp
         requires :description, type: String
       end
       post do
-        expense = Expense.insert(amount: params[:amount], description: params[:description])
+        expense = Expense.create(amount: params[:amount], description: params[:description])
       end
     end
   end
