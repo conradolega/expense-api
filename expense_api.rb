@@ -26,6 +26,7 @@ module ExpenseApp
       end
       post do
         expense = Expense.create(amount: params[:amount], description: params[:description])
+        {status: 'success'}
       end
     end
   end
