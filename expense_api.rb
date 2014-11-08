@@ -21,6 +21,15 @@ module ExpenseApp
       end
 
       params do
+        requires :id, type: Integer
+      end
+      route_param :id do
+        get do
+          Expense[params[:id]].to_hash
+        end
+      end
+
+      params do
         requires :amount, type: Integer
         requires :description, type: String
       end
