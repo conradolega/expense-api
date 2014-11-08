@@ -15,7 +15,7 @@ module ExpenseApp
         {
           total: Expense.count,
           expenses: Expense.all.map do |i|
-                      {description: i.description, amount: i.amount}
+                      i.to_hash
                     end
         }
       end
