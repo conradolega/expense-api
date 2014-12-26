@@ -25,7 +25,9 @@ module ExpenseApp
       end
       route_param :id do
         get do
-          Expense[params[:id]].to_hash
+          expense = Expense[params[:id]]
+          return expense.to_hash if expense
+          {error: 'Not found'}
         end
       end
 
